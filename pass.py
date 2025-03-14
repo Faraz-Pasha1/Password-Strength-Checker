@@ -3,10 +3,10 @@ import random
 import string
 import re
 
-# Page Configuration
+# Page Heading
 st.set_page_config(page_title="🔐 Ultimate Password Strength Checker", page_icon="🔑", layout="centered")
 
-# Title & Description
+# Title & Descp
 st.title("🔍 Password Strength Checker & Generator")
 st.markdown("""
 ### 🔥 Secure Your Digital World with a Strong Password!
@@ -14,7 +14,7 @@ st.markdown("""
 🔑 A strong password helps protect your online identity from hackers!
 """, unsafe_allow_html=True)
 
-# Function to Generate a Strong Password
+#  Generate a Strong Password
 def generate_password(length=12):
     all_chars = string.ascii_letters + string.digits + "!@#$%^&*()_+"
     return ''.join(random.choice(all_chars) for _ in range(length))
@@ -25,15 +25,14 @@ common_passwords = {
     "welcome", "monkey", "football", "iloveyou", "12345678", "sunshine", "123123"
 }
 
-# Input Your Password
+# Input field of ur Password
 password = st.text_input("🔑 Enter Your Password", type="password")
 
-# Button to Generate a Strong Password
+# Button push to Generate a Strong Password
 if st.button("🛠 Generate Strong Password"):
     strong_password = generate_password()
     st.success(f"🔐 Suggested Password: **{strong_password}**")
 
-# Initialize Feedback List & Score
 feedback = []
 score = 0
 
